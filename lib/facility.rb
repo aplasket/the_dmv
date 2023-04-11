@@ -22,12 +22,11 @@ class Facility
   end
 
   def register_vehicle(vehicle)
-    if @services.include?('Vehicle Registration')
+    return unless @services.include?('Vehicle Registration')
       collect_fees(vehicle)
       change_registration_date(vehicle)
       establish_plate_type(vehicle)
       @registered_vehicles << vehicle
-    end
   end
 
   def collect_fees(vehicle)
@@ -64,7 +63,7 @@ class Facility
   end
 
   def qualified_for_written_test(registrant)
-    return true if registrant.permit == true && registrant.age >= 16
+    return true if registrant.permit? && registrant.age >= 16
     false
   end
 

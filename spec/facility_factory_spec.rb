@@ -70,7 +70,7 @@ end
     end
 
     it 'formats :NY facility phone number' do
-      expect(@new_york.first.phone).to eq("nil")
+      expect(@new_york.first.phone).to eq(nil)
       expect(@new_york.sample.address).to be_a(String)
     end
   end
