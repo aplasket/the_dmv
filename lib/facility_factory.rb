@@ -66,3 +66,6 @@ class FacilityFactory
     facility[:phone].delete("() ").insert(3, "-")
   end
 end
+
+# edge case consideration: break out each name and address
+# as helper methods and add a return nil if !facility[:name] or !facility[:address]
